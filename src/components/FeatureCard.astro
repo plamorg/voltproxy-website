@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon";
+
+interface Props {
+    title: string;
+    icon: string;
+    description: string;
+}
+
+const { title, icon, description } = Astro.props;
+---
+<div class="bg-white p-8 rounded-lg drop-shadow-md">
+    <div class="flex items-center mb-3">
+        <Icon class="inline text-sky-500 mr-3" name={icon} size="28" />
+        <p class="inline font-medium text-2xl">{title}</p>
+    </div>
+    <p class="text-gray-700">{description}</p>
+</div>

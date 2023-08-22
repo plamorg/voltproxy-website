@@ -1,0 +1,21 @@
+---
+import { getCollection } from "astro:content";
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const blogEntries = await getCollection("docs");
+  return blogEntries.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+<Layout title="docs">
+    <article class="prose max-w-screen-md mx-auto px-8">
+        <h1 class="py-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-amber-600">{entry.data.title}</h1>
+        <Content />
+    </article>
+</Layout>
+

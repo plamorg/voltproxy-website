@@ -1,0 +1,36 @@
+---
+import { Icon } from "astro-icon"
+---
+<section class="flex">
+    <div class="space-y-12 flex flex-col items-center lg:items-start">
+        <div class="text-center lg:text-left text-4xl lg:text-7xl">
+            <span class="inline font-black bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-yellow-500">
+                Supercharged{" "}
+            </span>
+            <h2 class="inline font-medium">
+                Service Proxying
+            </h2>
+            <p class="mt-5 text-2xl">A reverse proxy focused on simplicity and Docker integration.</p>
+        </div>
+        <form action="https://github.com/plamorg/voltproxy">
+            <button type="submit" class="flex items-center rounded-lg ring-2 ring-gray-500 px-4 py-1 font-bold transition hover:text-gray-500 hover:ring-amber-500">
+                <Icon pack="mdi" name="github" class="mr-2" size="32" />
+                <span>Source</span>
+            </button>
+        </form>
+    </div>
+    <div class="hidden lg:block">
+        <svg width="500" height="300">
+            <Icon class="text-amber-400" pack="ph" name="lightning-fill" size="80" x="200" y="100" />
+            <Icon class="text-gray-600" pack="ic" name="baseline-circle" size="80" y="100" />
+            <Icon class="text-sky-400" pack="ic" name="baseline-hexagon" size="80" y="100" x="400" />
+            <Icon class="text-sky-600" pack="ic" name="baseline-hexagon" size="80" y="0" x="400" />
+            <Icon class="text-sky-500" pack="ic" name="baseline-hexagon" size="80" y="200" x="400" />
+
+            <path class="stroke-gray-500" stroke-width="4" stroke-linecap="round" d="M80 140L200 140" />
+            <path class="stroke-gray-500" stroke-width="4" stroke-linecap="round" d="M280 140L400 140" />
+            <path class="stroke-gray-500" stroke-width="4" stroke-linecap="round" fill="transparent" d="M 280 140 C 350 140, 350 40, 400 40" />
+            <path class="stroke-gray-500" stroke-width="4" stroke-linecap="round" fill="transparent" d="M 280 140 C 350 140, 350 240, 400 240" />
+        </svg>
+    </div>
+</section>

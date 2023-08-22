@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon"
+---
+<nav class="flex py-8 max-w-screen-xl mx-auto px-8 justify-between items-center">
+    <div class="flex items-center gap-12">
+        <form action="/">
+            <button type="submit" class="flex items-center select-none hover:opacity-40 hover:cursor-pointer">
+                <Icon class="inline mr-1" pack="ph" name="lightning-fill" size="40" />
+                <h1 class="inline font-bold text-lg">voltproxy</h1>
+            </button>
+        </form>
+        <a href="/docs" class="hover:opacity-40 font-medium">Docs</a>
+    </div>
+    <form action="https://github.com/plamorg/voltproxy">
+        <button type="submit" class="flex items-center select-none hover:opacity-40 hover:cursor-pointer">
+            <Icon pack="mdi" name="github" size="36" />
+        </button>
+    </form>
+</nav>
