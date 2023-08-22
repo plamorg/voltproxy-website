@@ -15,7 +15,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title="docs">
+<Layout title={entry.data.title}>
   <div class="max-w-screen-lg mx-auto lg:grid lg:grid-cols-4 px-5">
     <div class="lg:col-span-1 hidden lg:block">
       <DocNav />

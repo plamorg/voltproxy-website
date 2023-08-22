@@ -1,5 +1,6 @@
 ---
 import Navbar from "../components/Navbar.astro";
+import { SEO } from "astro-seo";
 interface Props {
   title: string;
 }
@@ -10,12 +11,22 @@ const { title } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="voltproxy" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+    <SEO
+      title={title}
+      description="A reverse proxy focused on simplicity and Docker integration."
+      openGraph={{
+        basic: {
+          title:
+            "voltproxy is a reverse proxy that helps you manage and distribute incoming network traffic to multiple backend servers.",
+          type: "image/png",
+          image:
+            "https://raw.githubusercontent.com/plamorg/voltproxy/main/voltproxy.png",
+        },
+      }}
+      extend={{
+        link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+      }}
+    />
   </head>
   <body class="bg-gradient-to-b from-gray-100 to-gray-200 min-h-screen">
     <Navbar />

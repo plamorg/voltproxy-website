@@ -27,6 +27,7 @@ Properties:
 
   When a client connects to `lb.example.com`, voltproxy sets an HTTP cookie that stores the index of the server to which they connected.
   The next time the client connects to `lb.example.com`, they will be directed to the same service.
+
 - **strategy** defines the service selection strategy (Default: `roundRobin`).
 
 - **serviceNames** indicates the servers in the server pool (Default: `[]`).
