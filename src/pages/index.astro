@@ -1,41 +1,50 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Highlight from '../components/Highlight.astro';
-import FeatureCard from '../components/FeatureCard.astro';
-import SampleConfiguration from '../components/SampleConfiguration.astro';
-import { Icon } from "astro-icon"
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Highlight from "../components/Highlight.astro";
+import FeatureCard from "../components/FeatureCard.astro";
+import SampleConfiguration from "../components/SampleConfiguration.astro";
 ---
 
 <Layout title="voltproxy">
-    <div class="px-4 max-w-screen-xl mx-auto pt-20 pb-40 lg:px-12">
-        <Hero />
-    </div>
-    <div class="max-w-screen-lg px-4 mx-auto space-y-32 mb-24">
-        <Highlight title="Single-file Configuration">
-            <div class="flex lg:flex-col flex-col-reverse lg:grid lg:grid-cols-3 gap-8">
-                <ul class="space-y-8 text-center lg:text-right lg:flex lg:flex-col lg:justify-between text-2xl lg:py-12 lg:font-medium">
-                    <li>
-                        Simple configuration
-                    </li>
-                    <li>
-                        Easy server migration
-                    </li>
-                    <li>
-                        Dynamic Docker routing
-                    </li>
-                </ul>
-                <div class="col-span-2">
-                    <SampleConfiguration />
-                </div>
-            </div>
-        </Highlight>
-        <Highlight title="Design Goals">
-            <div class="justify-between flex flex-col gap-8 max-w-screen-md mx-auto">
-                <FeatureCard icon="octicon:graph-16" title="Scalability" description="Distribute traffic across multiple services through load balancing. Choose between multiple selection strategies and configure session persistence." />
-                <FeatureCard icon="mdi:puzzle" title="Extensibility" description="Attach multiple middlewares to services to enhance functionality, intercept traffic, and add rules." />
-                <FeatureCard icon="ic:round-shield" title="Security" description="Enforce HTTPS through automatically generating and renewing ACME-based certificates. No manual intervention needed." />
-            </div>
-        </Highlight>
-    </div>
+  <div class="px-4 max-w-screen-xl mx-auto pt-20 pb-40 lg:px-12">
+    <Hero />
+  </div>
+  <div class="max-w-screen-lg px-4 mx-auto space-y-32 mb-24">
+    <Highlight title="Single-file Configuration">
+      <div
+        class="flex lg:flex-col flex-col-reverse lg:grid lg:grid-cols-3 gap-8"
+      >
+        <ul
+          class="space-y-8 text-center lg:text-right lg:flex lg:flex-col lg:justify-between text-2xl lg:py-12 lg:font-medium"
+        >
+          <li>Simple configuration</li>
+          <li>Easy server migration</li>
+          <li>Dynamic Docker routing</li>
+        </ul>
+        <div class="col-span-2">
+          <SampleConfiguration />
+        </div>
+      </div>
+    </Highlight>
+    <Highlight title="Design Goals">
+      <div class="justify-between flex flex-col gap-8 max-w-screen-md mx-auto">
+        <FeatureCard
+          icon="octicon:graph-16"
+          title="Scalability"
+          description="Distribute traffic across multiple services through load balancing. Choose between multiple selection strategies and configure session persistence."
+        />
+        <FeatureCard
+          icon="mdi:puzzle"
+          title="Extensibility"
+          description="Attach multiple middlewares to services to enhance functionality, intercept traffic, and add rules."
+        />
+        <FeatureCard
+          icon="ic:round-shield"
+          title="Security"
+          description="Enforce HTTPS through automatically generating and renewing ACME-based certificates. No manual intervention needed."
+        />
+      </div>
+    </Highlight>
+  </div>
 </Layout>

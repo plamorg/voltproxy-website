@@ -1,0 +1,41 @@
+---
+interface Document {
+  title: string;
+  link: string;
+}
+
+const documents: Document | string[] = [
+  { title: "Getting Started", link: "getting-started" },
+  { title: "Installation", link: "installation" },
+  "Basics",
+  { title: "Configuration", link: "configuration" },
+  { title: "Health Checking", link: "health-checking" },
+  { title: "Load Balancing", link: "load-balancing" },
+  "Middlewares",
+  { title: "Auth Forward", link: "auth-forward" },
+  { title: "IP Allow", link: "ip-allow" },
+  "Guides",
+  { title: "Authelia Integration", link: "authelia-integration" },
+];
+---
+
+<div class="pt-3 space-y-2">
+  {
+    documents.map((doc: Document | string) => {
+      if (typeof doc === "string") {
+        return (
+          <h3 class="pt-6 text-xl leading-6 font-bold text-gray-900">{doc}</h3>
+        );
+      } else {
+        return (
+          <a
+            href={doc.link}
+            class="block mt-1 text-base leading-tight text-gray-900 hover:underline"
+          >
+            {doc.title}
+          </a>
+        );
+      }
+    })
+  }
+</div>

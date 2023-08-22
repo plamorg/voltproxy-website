@@ -1,21 +1,32 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
+import DocNav from "../../components/DocNav.astro";
 
 export async function getStaticPaths() {
   const blogEntries = await getCollection("docs");
-  return blogEntries.map(entry => ({
-    params: { slug: entry.slug }, props: { entry },
+  return blogEntries.map((entry) => ({
+    params: { slug: entry.slug },
+    props: { entry },
   }));
 }
 
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
-<Layout title="docs">
-    <article class="prose max-w-screen-md mx-auto px-8">
-        <h1 class="py-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-amber-600">{entry.data.title}</h1>
-        <Content />
-    </article>
-</Layout>
 
+<Layout title="docs">
+  <div class="max-w-screen-lg mx-auto lg:grid lg:grid-cols-4 px-5">
+    <div class="lg:col-span-1 hidden lg:block">
+      <DocNav />
+    </div>
+    <article class="prose max-w-none lg:col-span-3 pb-20">
+      <h1
+        class="text-5xl pb-2 bg-clip-text text-transparent bg-gradient-to-r from-yellow-500 to-amber-600"
+      >
+        {entry.data.title}
+      </h1>
+      <Content />
+    </article>
+  </div>
+</Layout>

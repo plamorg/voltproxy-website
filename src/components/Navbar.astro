@@ -1,19 +1,50 @@
 ---
-import { Icon } from "astro-icon"
+import { Icon } from "astro-icon";
+import DocNav from "./DocNav.astro";
 ---
-<nav class="flex py-8 max-w-screen-xl mx-auto px-8 justify-between items-center">
-    <div class="flex items-center gap-12">
-        <form action="/">
-            <button type="submit" class="flex items-center select-none hover:opacity-40 hover:cursor-pointer">
-                <Icon class="inline mr-1" pack="ph" name="lightning-fill" size="40" />
-                <h1 class="inline font-bold text-lg">voltproxy</h1>
-            </button>
-        </form>
-        <a href="/docs" class="hover:opacity-40 font-medium">Docs</a>
-    </div>
-    <form action="https://github.com/plamorg/voltproxy">
-        <button type="submit" class="flex items-center select-none hover:opacity-40 hover:cursor-pointer">
-            <Icon pack="mdi" name="github" size="36" />
-        </button>
+
+<nav
+  class="flex py-8 max-w-screen-xl mx-auto px-4 lg:px-8 justify-between items-center"
+>
+  <div class="flex items-center gap-12">
+    <form action="/">
+      <button
+        type="submit"
+        class="flex items-center select-none hover:opacity-40 hover:cursor-pointer"
+      >
+        <Icon class="inline mr-1" pack="ph" name="lightning-fill" size="40" />
+        <h1 class="inline font-bold text-lg">voltproxy</h1>
+      </button>
     </form>
+    <a href="/docs" class="hover:opacity-40 font-medium">Docs</a>
+  </div>
+  <div class="flex space-x-6 items-center">
+    <form action="https://github.com/plamorg/voltproxy">
+      <button
+        type="submit"
+        class="flex items-center select-none hover:opacity-40 hover:cursor-pointer"
+      >
+        <Icon pack="mdi" name="github" size="36" />
+      </button>
+    </form>
+    <button
+      type="submit"
+      id="docnav-toggle"
+      class="block lg:hidden flex items-center select-none hover:opacity-40 hover:cursor-pointer"
+    >
+      <Icon pack="ci" name="hamburger" size="36" />
+    </button>
+  </div>
 </nav>
+<div class="hidden px-6 pb-12" id="docnav">
+  <DocNav />
+</div>
+
+<script>
+  const button = document.getElementById("docnav-toggle");
+
+  button.addEventListener("click", () => {
+    const docnav = document.getElementById("docnav");
+    docnav.classList.toggle("hidden");
+  });
+</script>
